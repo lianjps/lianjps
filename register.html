@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar - Memezone 2.0</title>
+    <link rel="stylesheet" href="csscss.css">
+</head>
+<body>
+    <!-- Navigation Drawer -->
+    <input type="checkbox" id="drawer-toggle" class="drawer-toggle">
+    <div id="drawer" class="drawer">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="memezone2.0.html">Home</a>
+        <a href="memes.html">Memes</a>
+        <a href="register.html">Registrar</a>
+    </div>
+    
+    <!-- Button to open the Drawer -->
+    <span class="openbtn" onclick="openNav()" aria-label="Abrir Menu">&#9776;</span>
+    <div class="fab" onclick="document.getElementById('login-toggle').checked = true;" aria-label="Abrir Login">&#128100;</div>
+    
+    <span class="openbtn" onclick="openNav()">&#9776;</span>
+    
+    <!-- Modal Login -->
+    <input type="checkbox" id="login-toggle" class="login-toggle">
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="document.getElementById('login-toggle').checked = false;">&times;</span>
+            <h2>Login</h2>
+            <form action="login_processing.php" method="POST">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Login</button>
+            </form>
+            <p>Não tem uma conta? <a href="register.html">Crie uma aqui</a></p>
+        </div>
+    </div>
+    
+    <!-- Main Content -->
+    <header>
+        <h1>Memezone 2.0</h1>
+        <p>Onde os memes se encontram</p>
+    </header>
+    
+    <nav>
+        <a href="memezone2.0.html">Home</a>
+        <a href="memes.html">Memes</a>
+        <a href="register.html">Registrar</a>
+    </nav>
+    
+    <section id="register">
+        <h2>Registrar</h2>
+        <form action="register_processing.php" method="POST">
+            <label for="new-username" data-tooltip="Escolha um nome de usuário único">Nome de Usuário:</label>
+            <input type="text" id="new-username" name="username" required>
+            <label for="new-password" data-tooltip="Escolha uma senha forte">Senha:</label>
+            <input type="password" id="new-password" name="password" required>
+            <button type="submit">Registrar</button>
+        </form>
+        <p>Já tem uma conta? <a href="memezone2.0.html">Faça login aqui</a></p>
+    </section>
+    
+    <!-- Floating Action Button -->
+    <div class="fab" onclick="document.getElementById('login-toggle').checked = true;">
+        <span>&#128100;</span>
+    </div>
+    
+    <footer>
+        &copy; 2024 Memezone 2.0
+    </footer>
+    
+    <script>
+        function openNav() {
+            document.getElementById("drawer").style.left = "0";
+        }
+        
+        function closeNav() {
+            document.getElementById("drawer").style.left = "-250px";
+        }
+    </script>
+</body>
+</html>

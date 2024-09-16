@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memes - Memezone 2.0</title>
+    <link rel="stylesheet" href="csscss.css">
+</head>
+<body>
+    <!-- Navigation Drawer -->
+    <span class="openbtn" onclick="openNav()" aria-label="Abrir Menu">&#9776;</span>
+    <div class="fab" onclick="document.getElementById('login-toggle').checked = true;" aria-label="Abrir Login">&#128100;</div>
+    
+    <input type="checkbox" id="drawer-toggle" class="drawer-toggle">
+    <div id="drawer" class="drawer">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="memezone2.0.html">Home</a>
+        <a href="memes.html">Memes</a>
+        <a href="register.html">Registrar</a>
+    </div>
+    
+    <!-- Button to open the Drawer -->
+    <span class="openbtn" onclick="openNav()">&#9776;</span>
+    
+    <!-- Modal Login -->
+    <input type="checkbox" id="login-toggle" class="login-toggle">
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="document.getElementById('login-toggle').checked = false;">&times;</span>
+            <h2>Login</h2>
+            <form action="login_processing.php" method="POST">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Login</button>
+            </form>
+            <p>Não tem uma conta? <a href="register.html">Crie uma aqui</a></p>
+        </div>
+    </div>
+    
+    <!-- Main Content -->
+    <header>
+        <h1>Memes - Memezone 2.0</h1>
+        <p>Aqui estão os memes da nossa comunidade</p>
+    </header>
+    
+    <nav>
+        <a href="memezone2.0.html">Home</a>
+        <a href="memes.html">Memes</a>
+        <a href="register.html">Registrar</a>
+    </nav>
+    
+    <div class="container">
+        <section id="memes">
+            <h2>Galeria de Memes</h2>
+            <div class="meme-gallery">
+                <!-- Adicione imagens de memes aqui -->
+                <div class="meme-item" data-tooltip="Legenda do Meme 1">
+                    <img src="meme aleatorio.jpg" alt="Meme 1">
+                </div>
+                <div class="meme-item" data-tooltip="Legenda do Meme 2">
+                    <img src="meme sla.jpg" alt="Meme 2">
+                </div>
+                <div class="meme-item" data-tooltip="Legenda do Meme 3">
+                    <img src="superr.jpg" alt="Meme 3">
+                </div>
+                <!-- Mais memes podem ser adicionados aqui -->
+            </div>
+        </section>
+    </div>
+    
+    <!-- Floating Action Button -->
+    <div class="fab" onclick="document.getElementById('login-toggle').checked = true;">
+        <span>&#128100;</span>
+    </div>
+    <!-- Área de Contatos -->
+<section id="contato">
+    <h2>Contate-Nos</h2>
+    <form action="contact_processing.php" method="POST">
+        <label for="name">Nome:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="message">Mensagem:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+        
+        <button type="submit">Enviar</button>
+    </form>
+</section>
+
+    <footer>
+        &copy; 2024 Memezone 2.0
+    </footer>
+    
+    <script>
+        function openNav() {
+            document.getElementById("drawer").style.left = "0";
+        }
+        
+        function closeNav() {
+            document.getElementById("drawer").style.left = "-250px";
+        }
+    </script>
+</body>
+</html>
